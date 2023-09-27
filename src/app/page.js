@@ -1,95 +1,46 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import ProjectPanel from '@/components/ProjectPanel'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <>
+      <header className={styles.header}>
+        <h1>Hi, I'm Joey Scanga!</h1>
+        <h2>An aspiring fullstack web developer</h2>
+        <img
+        className={styles.profilepic}
+        src='/linkedin-pic.jpg'></img>
+      </header>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <main>
+        <section className={styles.projectsection}>
+          <h1>Projects</h1>
+          <ProjectPanel />
+          <ProjectPanel />
+          <ProjectPanel />
+        </section>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+        <section className={styles.contactsection}>
+          <h1>Contact Me</h1>
+          <div className='contact-box'>
+            <form>
+              <label htmlFor='name'>Name:{'\n'}</label>
+              <input type='text' id='name' name='name' required/>
+              <label htmlFor='company'>Company (optional):{'\n'}</label>
+              <input type='text' id='company' name='company'/>
+              <label htmlFor='message'>Message: {'\n'}</label>
+              <input type='text' id='name' name='name' required/>
+              <input type='submit' value='Submit' />
+            </form>
+          </div>
+        </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+      </main>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <footer className={styles.footer}>
+        <p>Built/maintained by Joey Scanga, 2023. All rights reserved.</p>
+      </footer>
+    </>
   )
 }
