@@ -2,6 +2,7 @@
 
 .header {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
@@ -9,11 +10,19 @@
   padding: 0;
 }
 
+.headerpath {
+  position: absolute;
+  top: 20rem;
+  left: 20rem;
+  fill: transparent;
+  stroke: forestgreen;
+  stroke-width: 5;
+}
+
+
+
 .profilepic {
-  width: 200px;
-  height: 200px;
   margin: 30px 0 0 0; 
-  border: 1px dashed white;
   border-radius: 60%;
   filter: brightness(90%);
 }
@@ -22,9 +31,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
   margin: 2rem 2rem;
   padding: 0;
+}
+
+.socialsection {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: center;
+  margin: 2rem 2rem;
+  padding: 0;
+}
+
+
+.sociallinkimgcontainer {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0 20px;
+
 }
 
 .contactsection {
