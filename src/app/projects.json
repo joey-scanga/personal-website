@@ -1,0 +1,28 @@
+{
+    "projects": [
+        {
+            "name": "Python Platformer",
+            "imgpath": "platformer.png",
+            "desc": "A procedurally-generated platformer game using Python's pygame and pymunk libraries.",
+            "projectlink": "https://github.com/joey-scanga/procedural-pygame-platformer"
+        },
+        {
+            "name": "'Breakthrough' Game with AI Agents",
+            "imgpath": "breakthrough.png",
+            "desc": "Watch 2 AI's of different abilities face off in the game 'Breakthrough'!",
+            "projectlink": "https://github.com/joey-scanga/breakthrough"
+        },
+        {
+            "name": "Next.js Portfolio Website",
+            "imgpath": "xyz.png",
+            "desc": "Inception! View the source code of this portfolio site!",
+            "projectlink": "#"
+        },
+        {
+            "name": "Example ERC20 token",
+            "imgpath": "ether.jpg",
+            "desc": "An example ERC20 token, built with the OpenZeppelin Solidity library and the (now deprecated) Uniswap V2 protocol.",
+            "projectlink": "https://github.com/joey-scanga/ERC20-token"
+        }
+    ]
+}

@@ -3,6 +3,7 @@ import styles from './page.module.css'
 import ProjectPanel from '@/components/ProjectPanel'
 import SocialLink from '@/components/SocialLink'
 import Footer from '@/components/Footer'
+import projects from './projects.json'
 
 export default function Home() {
   return (
@@ -11,11 +12,6 @@ export default function Home() {
         <h1 className='fade-in'>Hi, I'm Joey Scanga!</h1>
         <h2 className='fade-in'>An aspiring fullstack web developer</h2>
         <section className={`${styles.socialsection} fade-in`}>
-          <SocialLink 
-          name='linkedin'
-          link='https://www.linkedin.com/in/joey-scanga'
-          imglink='/linkedin.png'
-          />
           <Image
           className={styles.profilepic}
           src='/linkedin-pic.jpg'
@@ -23,25 +19,29 @@ export default function Home() {
           width={200}
           height={200}
           />
-          <SocialLink
-          name='github'
-          link='https://www.github.com/joey-scanga'
-          imglink='/white-gh.png'
-          width={70}
-          height={70}/>
         </section>
       </header>
 
       <main>
+
+        <section className={styles.blurb}>
+          <p>Currently looking for work as a React frontend developer. </p>
+        </section>  
         <section className={styles.projectsection}>
           <h1 className='projectheader'>Projects</h1>
-          <ProjectPanel 
-          name='platformer'
-          desc='A basic Python platformer'
-          imgname='platformer.png'
-          />
-          <ProjectPanel />
-          <ProjectPanel />
+          <div className={styles.cardcontainer}>
+          {
+            projects["projects"].map((project, idx) => 
+              <ProjectPanel
+              key={idx}
+              name={project.name}
+              desc={project.desc}
+              imgname={project.imgpath}
+              projectlink={project.projectlink}/>
+            )
+          }
+          </div>
+          
         </section>
 
 
