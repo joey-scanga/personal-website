@@ -133,17 +133,13 @@ textarea {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  border-radius: 10% 10%;
 }
 
-
-.contact-box > form:nth-child(1) > input:nth-child(2) {
+#name,
+#company,
+#email,
+#message {
   width: 80vw;
-  margin-bottom: 15px;
-}
-
-
-#company {
   margin-bottom: 15px;
 }
 
