@@ -112,7 +112,8 @@ h5,
 h6,
 p,
 label,
-input {
+input,
+textarea {
   font-family: 'Space Mono', monospace;
   font-weight: 400;
   font-size: 15px;
@@ -171,5 +172,11 @@ input {
 
 .fade-in {
   animation: fadeIn 2s;
+}
+
+textarea {
+  height: 200px;
+  width: auto;
+  font-size: ;
 }
 

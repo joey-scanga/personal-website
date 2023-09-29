@@ -100,10 +100,6 @@
   cursor: pointer;
 }
 
-.projectpanel:hover::after {
-  animation: fall 1s;
-}
-
 @keyframes rise {
   from {
     transform: translateY(0%);
@@ -111,6 +107,27 @@
   to {
     transform: translateY(-10%);
   }
+}
+
+
+@media screen and (max-width: 1200px) {
+  .cardcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .projectpanel {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    margin: 4vh 0;
+  }
+
+  .projectpanel:hover {
+    animation: none;
+  }
+
 }
 
 

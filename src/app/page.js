@@ -54,7 +54,7 @@ export default function Home() {
               <label htmlFor='company'>Company (optional):{'\n'}</label>
               <input type='text' id='company' name='company'/>
               <label htmlFor='message'>Message: {'\n'}</label>
-              <input type='text' id='name' name='name' required/>
+              <textarea  id='message' name='message' placeholder='Write something...' required/>
               <input type='submit' value='Submit' />
             </form>
           </div>
