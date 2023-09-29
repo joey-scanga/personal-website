@@ -4,6 +4,7 @@ import ProjectPanel from '@/components/ProjectPanel'
 import SocialLink from '@/components/SocialLink'
 import Footer from '@/components/Footer'
 import projects from './projects.json'
+import ContactForm from '@/components/ContactForm'
 
 export default function Home() {
   return (
@@ -25,7 +26,6 @@ export default function Home() {
       <main>
 
         <section className={styles.blurb}>
-          <p>Currently looking for work as a React frontend developer. </p>
         </section>  
         <section className={styles.projectsection}>
           <h1 className='projectheader'>Projects</h1>
@@ -47,17 +47,7 @@ export default function Home() {
 
         <section className={styles.contactsection}>
           <h1>Contact Me</h1>
-          <div className='contact-box'>
-            <form action='/api/post-contact-form'>
-              <label htmlFor='name'>Name:{'\n'}</label>
-              <input type='text' id='name' name='name' required/>
-              <label htmlFor='company'>Company (optional):{'\n'}</label>
-              <input type='text' id='company' name='company'/>
-              <label htmlFor='message'>Message: {'\n'}</label>
-              <textarea  id='message' name='message' placeholder='Write something...' required/>
-              <input type='submit' value='Submit' />
-            </form>
-          </div>
+          <ContactForm />
         </section>
 
         <Footer />

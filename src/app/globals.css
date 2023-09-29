@@ -143,18 +143,6 @@ textarea {
 }
 
 
-.contact-box > form:nth-child(1) > input:nth-child(6) {
-  height: 20rem;
-  margin-bottom: 15px;
-}
-
-
-.contact-box > form:nth-child(1) > input:nth-child(7) {
-  height: 4rem;
-  width: 10rem;
-  align-self: center;
-}
-
 #company {
   margin-bottom: 15px;
 }
@@ -177,6 +165,5 @@ textarea {
 textarea {
   height: 200px;
   width: auto;
-  font-size: ;
 }
 

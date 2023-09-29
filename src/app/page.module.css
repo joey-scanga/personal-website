@@ -44,7 +44,7 @@
 .socialsection {
   display: flex;
   flex-direction: row;
-  align-items: end;
+  align-items: flex-end;
   justify-content: center;
   margin: 2rem 2rem;
   padding: 0;
@@ -146,6 +146,13 @@
 .projectdesch2 {
     font-size: 30px;
     margin-bottom: 15px;
+}
+
+.submitbtn {
+  margin-top: 15px;
+  height: 4rem;
+  width: 10rem;
+  align-self: center;
 }
 
 
