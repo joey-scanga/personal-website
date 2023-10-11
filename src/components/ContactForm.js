@@ -1,72 +1,59 @@
 'use client'
+import { useEffect, useState } from 'react'
 import styles from '@/app/page.module.css'
-import { useState } from 'react'
+import { submitContactFormAction } from '@/actions/submitContactForm'
 
-export default function ContactForm() {
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        company: "",
-        message: ""
-    })
+export default function ContactForm(props) {
 
-    const [formSuccess, setFormSuccesss] = useState(false)
+  const [formObj, setFormObj] = useState({
+    name: "",
+    email: "",
+    company: "",
+    message: "",
+  }) 
 
-    const handleInput = (e) => {
-        const fieldName = e.target.name
-        const fieldValue = e.target.value
+  const [submitted, setSubmitted] = useState(false)
 
-        setFormData((prevState) => ({
-            ...prevState, 
-            [fieldName]: fieldValue
-        }))
-    }
+  const handleInput = (e) => {
+    const fieldName = e.target.name
+    const fieldValue = e.target.value
+    setFormObj((prev) => ({
+      ...prev,
+      [fieldName]: fieldValue 
+    }));
+  }
 
-    const onSubmit = async (e) => {
-        e.preventDefault()
+  const onSubmit = async () => {
+    await submitContactFormAction(formObj)
+    setSubmitted(true)
+  };
 
-        const formURL = e.target.action
-        const data = new FormData()
 
-        Object.entries(formData).forEach(([key, value]) => {
-            data.append(key, value)
-        })
-
-        fetch(formURL, {
-            method: "POST",
-            body: data,
-            headers: {
-              'accept': 'application/json',
-            },
-          }).then(() => {
-            setFormData({ 
-              name: "", 
-              email: "", 
-              company: "",
-              message: "" 
-            })
-        })
-
-        setFormSuccesss(true)
-    }
-
-    return (
-        <div className='contact-box'>
-        {formSuccess ?
-            <h2>Form submitted </h2> 
-            :
-            <form method='POST' action='/api/post-contact-form' onSubmit={onSubmit}>
-                <label htmlFor='name'>Name:{'\n'}</label>
-                <input type='text' id='name' name='name' onChange={handleInput}required/>
-                <label htmlFor='email'>Email:{'\n'}</label>
-                <input type='text' id='email' name='email' onChange={handleInput} required/>
-                <label htmlFor='company'>Company (optional):{'\n'}</label>
-                <input type='text' id='company' name='company' onChange={handleInput}/>
-                <label htmlFor='message'>Message: {'\n'}</label>
-                <textarea  id='message' name='message' placeholder='Write something...' onChange={handleInput} required/>
-                <input className={styles.submitbtn} type='submit' value='Submit' />
-            </form>
-        }
-        </div>
-    )
+  return (
+    <>
+    {!submitted ? (
+        <form>
+        <label htmlFor="name">Name:{"\n"}</label>
+        <input type="text" id="name" name="name" onChange={handleInput} required />
+        <label htmlFor="email">Email:{"\n"}</label>
+        <input type="email" id="email" name="email"onChange={handleInput} required />
+        <label htmlFor="company">Company (optional):{"\n"}</label>
+        <input type="text" id="company" name="company"onChange={handleInput} />
+        <label htmlFor="message">Message: {"\n"}</label>
+        <textarea
+            id="message"
+            name="message"
+            placeholder="Write something..."
+            onChange={handleInput}
+            required
+        />
+        <div></div> {/*Empty div for layout purposes*/}
+        <button id="submit" className={styles.submitbtn} onClick={onSubmit}>
+            Submit
+        </button>
+        </form>
+    ) : (<p>Form submitted!</p>)
+    }  
+    </>
+  )
 }
