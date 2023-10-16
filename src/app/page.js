@@ -24,7 +24,6 @@ export default function Home() {
       </header>
 
       <main>
-        <section className={styles.blurb}></section>
         <section className={styles.projectsection}>
           <h1 className="projectheader">Projects</h1>
           <div className={styles.cardcontainer}>
