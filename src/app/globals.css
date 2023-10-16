@@ -105,6 +105,103 @@ h2 {
   font-size: 40px;
 }
 
+a {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 300;
+  font-size: 30px;
+}
+
+nav {
+  display: flex;
+  padding: 40px;
+  justify-content: space-evenly;
+}
+
+nav a {
+  display: inline-block;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #6495ed;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.hamb-btn {
+  display: none;
+  border: none;
+  color: white;
+  font-size: 32px;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit
+}
+
+.close-btn {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  nav {
+    display: none;
+  }
+
+  .responsive-nav {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: sticky;
+  }
+
+  .resonsive-header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .responsive-close-btn {
+    display: inline-block;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 2rem;
+    color: white;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav-header {
+    background-color:#6495ed;
+    padding: 20px;
+  }
+  
+  .hamb-btn {
+    display: inline-block;
+    width: 80px;
+    color: white;
+    background-color: inherit;
+    border: none;
+
+  }
+}
+
+
 h3,
 h4,
 h5,
@@ -118,6 +215,7 @@ textarea {
   font-size: 15px;
 }
 
+
 form {
   display: grid;
   margin-left: 20vw;
@@ -125,6 +223,17 @@ form {
   grid-template-columns: 15vw 60vw;
   grid-template-rows: auto;
   column-gap: 2vw;
+}
+
+@media screen and (max-width: 1200px) {
+  form {
+    display: grid;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    grid-template-columns: 15vw 50vw;
+    grid-template-rows: auto;
+    column-gap: 10vw;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

@@ -5,14 +5,19 @@ import SocialLink from "@/components/SocialLink";
 import Footer from "@/components/Footer";
 import projects from "./projects.json";
 import ContactForm from "@/components/ContactForm";
+import NavBar from "@/components/NavBar";
 
 export default function Home() {
+  const toggleNav = () => {
+
+  }
   return (
     <>
+      <NavBar />
       <header className={styles.header}>
         <h1 className="fade-in">Hi, I'm Joey Scanga!</h1>
         <h2 className="fade-in">An aspiring fullstack web developer</h2>
-        <section className={`${styles.socialsection} fade-in`}>
+        {/* <section className={`${styles.socialsection} fade-in`}>
           <Image
             className={styles.profilepic}
             src="/linkedin-pic.jpg"
@@ -20,7 +25,7 @@ export default function Home() {
             width={200}
             height={200}
           />
-        </section>
+        </section> */}
       </header>
 
       <main>
