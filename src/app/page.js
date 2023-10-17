@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import styles from "./page.module.css";
 import ProjectPanel from "@/components/ProjectPanel";
@@ -6,17 +7,20 @@ import Footer from "@/components/Footer";
 import projects from "./projects.json";
 import ContactForm from "@/components/ContactForm";
 import NavBar from "@/components/NavBar";
+import { useEffect } from "react";
+import useMousePosition from "@/hooks/useMousePosition";
+import MouseShadow from "@/components/MouseShadow";
 
 export default function Home() {
-  const toggleNav = () => {
+  const [mouseRef, mousePosition] = useMousePosition()
 
-  }
   return (
-    <>
+    <div ref={mouseRef} style={{position: "relative"}}>
+      <MouseShadow mousePosition={mousePosition} />
       <NavBar />
       <header className={styles.header}>
-        <h1 className="fade-in">Hi, I'm Joey Scanga!</h1>
-        <h2 className="fade-in">An aspiring fullstack web developer</h2>
+        <h1 className="fade-in">Hi, I&apos;m Joey Scanga!</h1>
+        <h2 className="fade-in">A fullstack web developer</h2>
         {/* <section className={`${styles.socialsection} fade-in`}>
           <Image
             className={styles.profilepic}
@@ -51,6 +55,6 @@ export default function Home() {
 
         <Footer />
       </main>
-    </>
+    </div>
   );
 }

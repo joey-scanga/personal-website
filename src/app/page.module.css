@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
 
+
 .blurb {
   display: flex;
   margin: 2vh 5vw;
@@ -127,11 +128,11 @@
   .projectpanel:hover {
     animation: none;
   }
-
 }
 
 
 .projectpic {
+    position: inherit;
     border-top-left-radius: .75rem;
     border-top-right-radius: .75rem;
 }
